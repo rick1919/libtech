@@ -7,4 +7,10 @@ class BooksController < ApplicationController
   
   def detail3
   end
+  
+  def detail4
+  end
+  
+  def detail5
+  end
 end
