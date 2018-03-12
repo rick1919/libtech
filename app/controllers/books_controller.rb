@@ -28,4 +28,8 @@ class BooksController < ApplicationController
         ているだけに説得力がある。成功した人のきれいごとではなく、多くの金持ちが実践しているやり方を、ありのままに語っているところに特徴がある。'
     end
   end
+  def detail
+    @book = Book.find(params[:id])
+  end
+
 end

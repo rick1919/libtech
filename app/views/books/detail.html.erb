@@ -8,7 +8,11 @@
 </head>
 
 <body>
- 
+  <% provide(:title, @book.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="book_info">
+ <%= @book.name %>, <%= @book.summary %>
 <h1><button class=""><a href="https://libtech-ric2020.c9users.io/">サイト名</a></button></h1>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
 <%= @id %>
