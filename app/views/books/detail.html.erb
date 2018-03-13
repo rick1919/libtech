@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>詳細</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <% provide(:title, @book.name) %>
-<div class="row">
+ 
+  <div class="row">
   <aside class="col-md-4">
-    <section class="book_info">
- <%= @book.name %>, <%= @book.summary %>
-<h1><button class=""><a href="https://libtech-ric2020.c9users.io/">サイト名</a></button></h1>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
-<%= @id %>
-<h2><%= @title %></h2>
-<div><%= @author %> </div>
+  <section class="book_info">
+  <%= @book.title %>, <%= @book.author %>,<%= @book.summary %>,<%= link_to '購入はこちら', '@book.url'%>
+  <h1><button class=""><%= link_to "トップページ", root_path %></button></h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+  <%= @id %>
+  <h2><%= @title %></h2>
+  <div><%= @author %> </div>
 
-<div><%= @overview %></div>
-<div><a href="https://www.amazon.co.jp/%E6%88%90%E5%8A%9F%E8%80%85%E3%81%AE%E7%94%9F%E6%B4%BB%E7%BF%92%E6%85%A3%E9%9D%A9%E5%91%BD-%E6%96%8E%E8%97%A4%E4%BF%8A%E4%BB%8B-ebook/dp/B078RB28BH/ref=sr_1_8?s=books&ie=UTF8&qid=1519795641&sr=1-
-8&keywords=%E6%88%90%E5%8A%9F%E3%80%80%E9%9D%A9%E5%91%BD" rel="noopener" target="_blank">
-  購入はこちら</a></div>
+  <div><%= @overview %></div>
+  
   <div><%= debug(params) if Rails.env.development? %></div>
 </body>
 </html>
