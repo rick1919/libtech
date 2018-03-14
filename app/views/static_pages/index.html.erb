@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>一覧</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
+ 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
-<button class=""><a href="">サイト名</a></button>
-<!--a class="btn btn-lg btn-block" href="#" role="button">サイト名</a-->
-<div style="border-style: solid ; border-width: 5px;"><a href="/static_pages/detail">タイトル</a><br>作者　<br>サマリ</div>
-<div style="border-style: solid ; border-width: 5px;"><a href="">成功革命</a><br>佐藤　<br>日本一多い苗字</div>
-<div style="border-style: solid ; border-width: 5px;"><a href="">部活のやめ方</a><br>鈴木　<br>部活やめるってよ</div>
-<div style="border-style: solid ; border-width: 5px;"><a href="">ユニクロが成功した理由</a><br>田中　<br>ビジネス始める方向け</div>
-<div style="border-style: solid ; border-width: 5px;"><a href="">成功したいならこの本を読め</a><br>高橋　<br>成功したいならこの本</div>
+  <h1>
+    <button class="home_button">
+      <%= link_to "トップページ", root_path %>
+    </button>
+  </h1>
+  <div style="border-style: solid ; border-width: 5px;">
+    <a href="books/detail/1">タイトル</a>
+    <br>作者
+    <br>サマリ
+  </div>
+  <div style="border-style: solid ; border-width: 5px;">
+    <% provide(:title, 'All users') %>
+    <a href="books/detail/2">成功者の生活習慣革命</a>
+    <br>斎藤俊介
+    <br>日本一多い苗字
+  </div>
+  <div style="border-style: solid ; border-width: 5px;">
+    <a href="books/detail/3">お金2.0 新しい経済のルールと生き方</a>
+    <br>佐藤 航陽
+    <br>今後はお金の価値がどんどん下がり、資本主義から価値主義に移行していく.
+  </div>
+  <div style="border-style: solid ; border-width: 5px;">
+    <a href="books/detail/4">ビジネス名著大全 </a>
+    <br>橋本 忠明
+    <br>ビジネス始める方向け
+  </div>
+  <div style="border-style: solid ; border-width: 5px;">
+    <a href="books/detail/5">非常識な成功法則</a>
+    <br>神田昌典
+    <br>成功したいならこの本
+  </div>
+  <div>
+    <%= debug(params) if Rails.env.development? %>
+  </div><!-->開発環境においてのみ表示<-->
 </body>
 </html>
