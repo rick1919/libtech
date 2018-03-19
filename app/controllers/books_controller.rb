@@ -3,7 +3,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   def index
-    
+    @book = Book.all
   end
 
    

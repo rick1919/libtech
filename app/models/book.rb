@@ -4,8 +4,8 @@ class Book < ActiveRecord::Base
   validates :author, presence: true, length: {maximum: 20}
   validates :url,    presence: true, length: {maximum: 250}
   
-  
-  def self.search(search) 
+  #検索結果を表示する
+  def self.search(s) 
     if search
       where(['name LIKE ?', "%#{search}%"]) #部分一致
     else
@@ -13,5 +13,5 @@ class Book < ActiveRecord::Base
     end
   end
 
-  private
+ 
 end
