@@ -9,7 +9,7 @@
 
   <body>
   <p>books search</p>
-    <%= form_tag(root_path) do %>
+    <%= form_tag(books_path) do %>
     <%= text_field_tag :search %><!--＃サーチという名のテキストボックス生成-->
     <%= submit_tag 'Search', :name => nil %>
     <% end %>
@@ -18,7 +18,8 @@
     <%= book.title %><br>
     <%= book.author %><br>
     <%= book.summary %><br>
-    <%= link_to '購入はこちら', '@book.url'%>
+    <%= link_to "購入はこちら","/"%><br>
+
     <%end%>
   </body>
 </html>

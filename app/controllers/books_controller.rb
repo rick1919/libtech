@@ -3,8 +3,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   def index
-    @book = Book.all
+    @book = Book.where(:title =>'')
   end
 
-   
 end
