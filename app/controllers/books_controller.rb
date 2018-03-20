@@ -3,7 +3,12 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   def index
-    @book = Book.where(:title =>'')
+    @book = Book.all
   end
-
+  def search
+    @book = Book.where("title like ?","%" + params[:title] + "%")
+    render :action =>'index'
+  
+  end
+  
 end

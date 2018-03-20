@@ -9,10 +9,11 @@
 
   <body>
   <p>books search</p>
-    <%= form_tag(books_path) do %>
-    <%= text_field_tag :search %><!--＃サーチという名のテキストボックス生成-->
+    <%= form_tag '/books/search' do %>
+    <%= text_field_tag  :title,params[:title]%><!--＃サーチという名のテキストボックス生成-->
     <%= submit_tag 'Search', :name => nil %>
     <% end %>
+    <%= params[:title] %>
 
     <% @book.each do |book| %>
     <%= book.title %><br>
