@@ -37,11 +37,18 @@
 // @link-color: #ff0000;
 body {
   padding-top: 60px;
-  
+  text-align: center;  
 }
 h1,h2{
-  
-  text-align: center;
+  display:inline-block;
+  padding-left:4px;
+  width:135px;
+  text-align: left;
+  border:5px solid #99FF33; 
+}
+.title-book{
+    border:5px solid #99FF33; 
+
 }
 
 div{

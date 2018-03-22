@@ -8,19 +8,16 @@
   </head>
 
   <body>
-  <p>books search</p>
+    <h1>Booker</h1>
     <%= form_tag '/books/search' do %>
-    <%= text_field_tag  :title,params[:title]%><!--＃サーチという名のテキストボックス生成-->
+    <%= text_field_tag :title,params[:title] %><!--titleという名前のカラムからtitleのパラメータ取得-->
     <%= submit_tag 'Search', :name => nil %>
     <% end %>
-    <%= params[:title] %>
-
+    
     <% @book.each do |book| %>
-    <%= book.title %><br>
+    <%=link_to 'book.title', books_path, class: "title-book", id: "book-title" %><br>
     <%= book.author %><br>
     <%= book.summary %><br>
-    <%= link_to "購入はこちら","/"%><br>
-
     <%end%>
   </body>
 </html>
