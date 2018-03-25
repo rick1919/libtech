@@ -15,7 +15,7 @@
     <% end %>
     
     <% @book.each do |book| %>
-    <%=link_to 'book.title', books_path, class: "title-book", id: "book-title" %><br>
+    <%=link_to book.title,book_path(book) %><br>
     <%= book.author %><br>
     <%= book.summary %><br>
     <%end%>
