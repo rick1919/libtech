@@ -10,7 +10,7 @@
   <body>
     <h1>Booker</h1>
     <%= form_tag '/books/search' do %>
-    <%= text_field_tag :title,params[:title] %><!--titleという名前のカラムからtitleのパラメータ取得-->
+    <%= text_field_tag :title,params[:title] %><%#titleという名前のカラムからtitleのパラメータ取得%>
     <%= submit_tag 'Search', :name => nil %>
     <% end %>
     
