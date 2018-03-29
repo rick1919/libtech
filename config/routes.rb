@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
-  get 'books/detail/:id',to: 'books#detail'
-  resources :books
+    root 'books#index'
+    get '/' => 'books#index'
+    get 'books/:id',to: 'books#detail'
+    post 'books/search' => 'books#search'
+    resources :books do
+  
+  end
 end

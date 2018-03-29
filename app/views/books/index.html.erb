@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>一覧</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <h1>Booker</h1>
+    <%= form_tag '/books/search' do %>
+    <%= text_field_tag :title,params[:title] %><%#titleという名前のカラムからtitleのパラメータ取得%>
+    <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+    
+    <% @book.each do |book| %>
+    <%=link_to book.title,book_path(book) %><br>
+    <%= book.author %><br>
+    <%= book.summary %><br>
+    <%end%>
+  </body>
+</html>
