@@ -6,9 +6,7 @@ class BooksController < ApplicationController
     @book = Book.all
   end
   def search
-    @book = Book.where("title like ?","%" + params[:title] + "%")
-    render :action =>'index'
-  
+    @book = Book.where("title like ?", "%" + params[:title] + "%")
+    render :action => 'index'
   end
-  
 end
